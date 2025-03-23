@@ -1,9 +1,12 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { logoutUser } from "../../store/reducers/userSlice";
 
 const SideNavbar = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const onLogout = () => {
     // navigate back to login once loggged out
@@ -17,7 +20,8 @@ const SideNavbar = () => {
       confirmButtonText: "Yes, logout!",
     }).then((result) => {
       if (result.isConfirmed) {
-        navigate("/login");
+        dispatch(logoutUser())
+        navigate("/");
       }
     });
   };
