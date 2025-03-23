@@ -21,7 +21,7 @@ function Home() {
         <Container>
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/health-tops">Health Topics</Nav.Link>
+            <Nav.Link href="/health-topics">Health Topics</Nav.Link>
             <Nav.Link href="/resources">Resources</Nav.Link>
             <Nav.Link href="/about">About Us</Nav.Link>
             <Nav.Link href="/contact">Contact</Nav.Link>
