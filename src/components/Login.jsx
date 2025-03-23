@@ -1,38 +1,84 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Button, Form } from 'react-bootstrap';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const Login =()=>{
+    const navigate = useNavigate();
+    const [validated, setValidated] = useState(false);
+    const [formData, setFormData] = useState({
+        email: "",
+        password: "",
+      });
+    
+      const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+      };
+
+    const onSubmit = (event)=>{
+        event.preventDefault();
+        event.preventDefault();
+        const form = event.currentTarget;
+    
+        if (!form.checkValidity()) {
+          event.stopPropagation();
+        } else {
+          navigate('/dashboard')
+
+        }
+        setValidated(true);
+    }
     return (
-        <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
-            <div className="card" style={{ width: '20rem' }}>
-                <div className="card-body">
-                    <form>
-                        <div className='mb-2'>
-                            <i
-                                className="bi bi-person-circle"
-                                style={{ fontSize: '3rem', marginRight: '10px' }}
-                            />
-                            <h1>Login</h1>
-                        </div>
-                        <div className="mb-3">
-                            <input type="email" className="form-control" id="email" placeholder="email" />
-                        </div>
-                        <div className="mb-3">
-                            <input type="password" className="form-control" id="password" placeholder="Password" />
-                        </div>
-                        <button type="submit" className="btn btn-primary">Login</button>
-                    </form>
-                    <div className="mt-3">
-                        <a href="#" className="card-link">Forgot password?</a>
-                    </div>
-                    <div className="mt-3">
-                    New User? <Link to="/register">Register here</Link>
-                    </div>
-                        
-                </div>
-            </div>
-            </div>
+        <div className="d-flex justify-content-center align-items-center" style={{ height: "100vh" }}>
+      <div className="card shadow p-4" style={{ width: "22rem" }}>
+        <div className="card-body">
+          <div className="text-center">
+            <i className="bi bi-person-circle" style={{ fontSize: "3rem", color: "#0d6efd" }} />
+            <h2 className="mt-2">Login</h2>
+          </div>
+
+          <Form noValidate validated={validated} onSubmit={onSubmit}>
+            <Form.Group className="mb-3" controlId="email">
+              <Form.Control
+                required
+                type="email"
+                name="email"
+                placeholder="Enter email"
+                value={formData.email}
+                onChange={handleChange}
+              />
+              <Form.Control.Feedback type="invalid">Please enter a valid email.</Form.Control.Feedback>
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="password">
+              <Form.Control
+                required
+                type="password"
+                name="password"
+                placeholder="Enter password"
+                value={formData.password}
+                onChange={handleChange}
+              />
+              <Form.Control.Feedback type="invalid">
+                Password is required.
+              </Form.Control.Feedback>
+            </Form.Group>
+
+            <Button variant="primary" type="submit" className="w-100">
+              Login
+            </Button>
+          </Form>
+
+          <div className="mt-3 text-center">
+            <a href="#" className="text-decoration-none">Forgot password?</a>
+          </div>
+
+          <div className="mt-3 text-center">
+            New User? <Link to="/register" className="text-primary">Register here</Link>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 
