@@ -11,6 +11,7 @@ import Resources from "./components/Resources";
 import ForgotPassword from "./components/ForgotPassword";
 import Profile from "./components/Profile";
 import Messages from "./components/Messages";
+import PatientsDashboard from "./components/PatientsDashboard";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/messages" element={<Messages />} />
+          <Route path="/patients" element={<PatientsDashboard />} />
         </Routes>
       </Router>
     </div>
