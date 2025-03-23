@@ -23,7 +23,7 @@ const SideNavbar = () => {
   };
   return (
     <div className="bg-dark text-white p-3 vh-100" style={{ width: "250px" }}>
-      <h4>Chronic Health</h4>
+      <h4>Bayer Health</h4>
       <ul className="nav flex-column">
         <li className="nav-item">
           <Link className="nav-link text-white" to="/dashboard">
