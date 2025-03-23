@@ -13,6 +13,7 @@ import Profile from "./components/Profile";
 import Messages from "./components/Messages";
 import PatientsDashboard from "./components/PatientsDashboard";
 import HealthTopics from "./components/HealthTopics";
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
@@ -31,6 +32,8 @@ function App() {
           <Route path="/messages" element={<Messages />} />
           <Route path="/patients" element={<PatientsDashboard />} />
           <Route path="/health-topics" element={<HealthTopics />} />
+
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </div>
