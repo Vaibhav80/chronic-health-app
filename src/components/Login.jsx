@@ -17,12 +17,9 @@ const Login =()=>{
         event.preventDefault();
         const form = event.currentTarget;
     
-        if (!form.checkValidity()) {
-          event.stopPropagation();
-        } else {
+        if (form.checkValidity()) {
           navigate('/dashboard')
-
-        }
+        } 
         setValidated(true);
     }
     return (
