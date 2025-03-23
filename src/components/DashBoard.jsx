@@ -5,36 +5,6 @@ import SideNavbar from "./SideNavbar";
 export const Dashboard = () => {
   return (
     <div className="d-flex">
-      {/* <div className="bg-dark text-white p-3 vh-100" style={{ width: "250px" }}>
-                <h4>Chronic Health</h4>
-                <ul className="nav flex-column">
-                    <li className="nav-item">
-                        <a className="nav-link text-white" href="#">
-                            Dashboard
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link text-white" to="/profile">
-                            My Profile
-                        </Link>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link text-white" href="#">
-                            Health Metrics
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link text-white" href="#">
-                            Messages
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link text-white" href="#" onClick={onLogout}>
-                            Logout
-                        </a>
-                    </li>
-                </ul>
-            </div> */}
       <SideNavbar />
 
       <div className="container-fluid p-4">
