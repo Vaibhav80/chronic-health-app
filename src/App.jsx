@@ -26,6 +26,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/health-topics" element={<HealthTopics />} />
 
         {/* Protected Routes */}
         <Route element={<ProtectedRoute />}>
@@ -36,7 +37,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/messages" element={<Messages />} />
           <Route path="/patients" element={<PatientsDashboard />} />
-          <Route path="/health-topics" element={<HealthTopics />} />
+          
         </Route>
 
         {/* Invalid routes */}
