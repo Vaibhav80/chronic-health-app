@@ -1,17 +1,21 @@
 import { useState } from 'react'
 import './App.css'
 import React from 'react';
-import Button from 'react-bootstrap/Button';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
+import Login from './components/Login';
+import Register from './components/Register';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-       <div className="App">
-          main file 
-    </div>
-    </>
+      <div className="App">
+        <Router>
+        <Routes>
+          {/* <Route path="/" element={<Home />} /> */}
+          <Route path="/login" element={<Login/>} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+        </Router>
+      </div>
   )
 }
 
