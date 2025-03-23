@@ -6,10 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 const Login =()=>{
     const navigate = useNavigate();
     const [validated, setValidated] = useState(false);
-    const [formData, setFormData] = useState({
-        email: "",
-        password: "",
-      });
+    const [formData, setFormData] = useState({email: "",password: ""});
     
       const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -70,7 +67,7 @@ const Login =()=>{
           </Form>
 
           <div className="mt-3 text-center">
-            <a href="#" className="text-decoration-none">Forgot password?</a>
+            <Link to="/forgot-password" className="text-primary">Forgot password? </Link>
           </div>
 
           <div className="mt-3 text-center">
