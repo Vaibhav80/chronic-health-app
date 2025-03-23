@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import SideNavbar from "./SideNavbar";
 
 export const Dashboard = () => {
