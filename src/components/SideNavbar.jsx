@@ -28,9 +28,9 @@ const SideNavbar =()=>{
                 </a>
             </li>
             <li className="nav-item">
-                <a className="nav-link text-white" href="#">
-                    Messages
-                </a>
+                    <Link className="nav-link text-white" to="/messages">
+                        Messages
+                    </Link>
             </li>
             <li className="nav-item">
                 <a className="nav-link text-white" href="#" onClick={onLogout}>
