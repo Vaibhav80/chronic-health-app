@@ -1,8 +1,14 @@
 import React from "react";
-import { patients } from "../mocks/patients";
 import { Table } from "react-bootstrap";
+import { useGetPatientQuery } from "../../store/apiSlice";
 
 const PatientsDashboard = () => {
+  const { data: patients, isFetching } = useGetPatientQuery();
+
+  if (isFetching) {
+    return <p>Loading</p>;
+  }
+
   return (
     <div class="d-flex flex-column pl-2 pr-2 pt-3">
       <h4>Patients</h4>
@@ -16,7 +22,7 @@ const PatientsDashboard = () => {
         </thead>
         <tbody>
           {patients.map((item) => (
-            <tr>
+            <tr key={item.id}>
               <td>{item.email}</td>
               <td>{item.bloodSugar}</td>
               <td>{item.temperature}</td>
