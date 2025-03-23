@@ -2,13 +2,12 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const apiSlice = createApi({
   reducerPath: "serverApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "/" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "" }),
   endpoints: (builder) => ({
-    getAlbums: builder.query({
-      query: (page = 1) => `albums?_page=${page}&_limit=10`,
-      transformResponse: () => "test",
+    getPatient: builder.query({
+      query: () => `https://jsonplaceholder.typicode.com/users`,
     }),
   }),
 });
 
-export const { useGetAlbumsQuery } = apiSlice;
+export const { useGetPatientQuery } = apiSlice;
