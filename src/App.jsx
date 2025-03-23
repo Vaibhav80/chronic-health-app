@@ -12,6 +12,7 @@ import ForgotPassword from "./components/ForgotPassword";
 import Profile from "./components/Profile";
 import Messages from "./components/Messages";
 import PatientsDashboard from "./components/PatientsDashboard";
+import HealthTopics from "./components/HealthTopics";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/messages" element={<Messages />} />
           <Route path="/patients" element={<PatientsDashboard />} />
+          <Route path="/health-topics" element={<HealthTopics />} />
         </Routes>
       </Router>
     </div>
