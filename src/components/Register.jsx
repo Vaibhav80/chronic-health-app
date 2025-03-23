@@ -3,9 +3,12 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
+import { UserRoleDropdown } from "../constants";
 
 const Register = () => {
   const [validated, setValidated] = useState(false);
+  const [isRoleValid, setIsRoleValid] = useState(null);
+  const [role, setRole] = useState(null);
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -15,6 +18,13 @@ const Register = () => {
     }
 
     setValidated(true);
+    setIsRoleValid(!!role);
+  };
+
+  const onRoleChange = (event) => {
+    event.preventDefault();
+    setIsRoleValid(!!event.target.value);
+    setRole(event.target.value);
   };
 
   return (
@@ -51,6 +61,21 @@ const Register = () => {
                 />
                 <Form.Control.Feedback type="invalid">
                   Passwords doesn't match.
+                </Form.Control.Feedback>
+              </Form.Group>
+            </Row>
+            <Row className="mb-3">
+              <Form.Group as={Col} md="12" controlId="validationCustom06">
+                <Form.Select isValid={isRoleValid} onChange={onRoleChange}>
+                  <option value={null}>Select</option>
+                  {UserRoleDropdown.map((item) => (
+                    <option key={item.value} value={item.value}>
+                      {item.label}
+                    </option>
+                  ))}
+                </Form.Select>
+                <Form.Control.Feedback type="invalid">
+                  Please provide a valid Role.
                 </Form.Control.Feedback>
               </Form.Group>
             </Row>
