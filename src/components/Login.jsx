@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+import { loginUser } from '../../store/reducers/userSlice';
+import swal from "sweetalert";
 
 
 const Login =()=>{
     const navigate = useNavigate();
     const [validated, setValidated] = useState(false);
     const [formData, setFormData] = useState({email: "",password: ""});
+    const dispatch = useDispatch();
     
       const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -18,7 +22,12 @@ const Login =()=>{
         const form = event.currentTarget;
     
         if (form.checkValidity()) {
-          navigate('/dashboard')
+          dispatch(loginUser({
+            email: formData.email,
+            password: formData.password,
+            swal, 
+            navigate
+          }));
         } 
         setValidated(true);
     }
