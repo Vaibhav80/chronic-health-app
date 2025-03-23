@@ -8,6 +8,8 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Resources from "./components/Resources";
+import ForgotPassword from "./components/ForgotPassword";
+import Profile from "./components/Profile";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/resources" element={<Resources />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </Router>
     </div>
